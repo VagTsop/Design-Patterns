@@ -28,9 +28,9 @@ To run the application, follow these steps:
    javac -d bin -sourcepath src src/com/company/Main.java
 Navigate to the bin directory:
 
-shell
-Copy code
+   ```shell
 cd bin
+
 Run the application:
 
 shell
