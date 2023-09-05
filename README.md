@@ -36,7 +36,7 @@ Run the application:
    ```shell
 java com.company.Main
    ```
-Usage
+## Usage
 The application provides the following menu options:
 
 - **Add Task**: Allows you to add a new task. You will be prompted to enter the task type (work/personal) and the task title.
