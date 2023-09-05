@@ -23,19 +23,20 @@ To run the application, follow these steps:
 1. Clone the repository or download the source code.
 
 2. Compile the Java files using your preferred Java compiler:
-
+   
    ```shell
    javac -d bin -sourcepath src src/com/company/Main.java
+   
 Navigate to the bin directory:
 
    ```shell
-cd bin
-
+   cd bin
+   ```
 Run the application:
 
-shell
-Copy code
+    ```shell
 java com.company.Main
+    ```
 Usage
 The application provides the following menu options:
 
