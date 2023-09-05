@@ -33,10 +33,9 @@ Navigate to the bin directory:
    cd bin
    ```
 Run the application:
-
-    ```shell
+   ```shell
 java com.company.Main
-    ```
+   ```
 Usage
 The application provides the following menu options:
 
