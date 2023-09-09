@@ -8,7 +8,7 @@ import java.util.List;
 public class Task {
     private String title;
     private boolean completed;
-    private List<Observer> observers = new ArrayList<>();
+    private List<Observer<Task>> observers = new ArrayList<>();
 
 
     public Task(String title) {
@@ -30,7 +30,7 @@ public class Task {
         return completed;
     }
 
-    public void addObserver(Observer observer) {
+    public void addObserver(Observer<Task> observer) {
         observers.add(observer);
     }
 
@@ -39,7 +39,7 @@ public class Task {
     }
 
     private void notifyObservers() {
-        for (Observer observer : observers) {
+        for (Observer<Task> observer : observers) {
             observer.update(this);
         }
     }

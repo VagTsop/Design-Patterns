@@ -1,5 +1,11 @@
 package com.company.models;
 
+import com.company.commands.AddTaskCommand;
+import com.company.commands.DeleteTaskCommand;
+import com.company.commands.ListTasksCommand;
+import com.company.commands.MarkTaskCompletedCommand;
+import com.company.interfaces.Command;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -30,13 +36,16 @@ public class TaskManager {
         String title = scanner.nextLine();
 
         Task task = TaskFactory.createTask(taskType, title);
-
         TaskCompletionNotifier notifier = new TaskCompletionNotifier();
-
         task.addObserver(notifier);
-
         tasks.add(task);
+
         System.out.println("Task added successfully!");
+    }
+
+    // New method to execute a command
+    public void executeCommand(Command command) {
+        command.execute();
     }
 
     private void listTasks() {
@@ -80,6 +89,19 @@ public class TaskManager {
 
     }
 
+    public void getDeleteTask() {
+        this.deleteTask();
+    }
+
+    public void getAddTask() {
+        this.addTask();
+    }
+    public void getMarkTaskAsCompleted() {
+        this.markTaskCompleted();
+    }
+    public void getListTask() {
+        this.listTasks();
+    }
 
     public void run() {
         while (true) {
@@ -96,16 +118,16 @@ public class TaskManager {
 
             switch (choice) {
                 case 1:
-                    addTask();
+                    executeCommand(new AddTaskCommand(this));
                     break;
                 case 2:
-                    listTasks();
+                    executeCommand(new ListTasksCommand(this));
                     break;
                 case 3:
-                    markTaskCompleted();
+                    executeCommand(new MarkTaskCompletedCommand(this));
                     break;
                 case 4:
-                    deleteTask();
+                    executeCommand(new DeleteTaskCommand(this));
                     break;
                 case 5:
                     System.out.println("Goodbye!");
@@ -116,5 +138,4 @@ public class TaskManager {
             }
         }
     }
-
 }
