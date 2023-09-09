@@ -23,46 +23,50 @@ To run the application, follow these steps:
 1. Clone the repository or download the source code.
 
 2. Compile the Java files using your preferred Java compiler:
-
+   
    ```shell
    javac -d bin -sourcepath src src/com/company/Main.java
+   
 Navigate to the bin directory:
 
-shell
-Copy code
-cd bin
+   ```shell
+   cd bin
+   ```
 Run the application:
-
-shell
-Copy code
+   ```shell
 java com.company.Main
-Usage
+   ```
+## Usage
 The application provides the following menu options:
 
-Add Task: Allows you to add a new task. You will be prompted to enter the task type (work/personal) and the task title.
+- **Add Task**: Allows you to add a new task. You will be prompted to enter the task type (work/personal) and the task title.
 
-List Tasks: Lists all the tasks that have been added.
+- **List Tasks**: Lists all the tasks that have been added.
 
-Mark Task as Completed: Marks a task as completed. You will be prompted to select a task by its number.
+- **Mark Task as Completed**: Marks a task as completed. You will be prompted to select a task by its number.
 
-Delete Task: Deletes a task from the list. You will be prompted to select a task by its number.
+- **Delete Task**: Deletes a task from the list. You will be prompted to select a task by its number.
 
-Exit: Exits the application.
+- **Exit**: Exits the application.
 
-Extending the Application
+## Extending the Application
+
 The application is designed to be extensible:
 
-To add new types of tasks, create a new class that extends the Task class and implement the desired functionality. Update the TaskFactory to recognize and create instances of this new task type.
+- To add new types of tasks, create a new class that extends the Task class and implement the desired functionality. Update the TaskFactory to recognize and create instances of this new task type.
 
-To add new observers for tasks, create a new class that implements the Observer interface and implement the update method. You can then attach the observer to tasks as needed.
+- To add new observers for tasks, create a new class that implements the Observer interface and implement the update method. You can then attach the observer to tasks as needed.
 
-Additional menu options and features can be added by extending the TaskManager class and updating the menu and switch-case statements in the run method.
+- Additional menu options and features can be added by extending the TaskManager class and updating the menu and switch-case statements in the run method.
 
-Contributing
+## Contributing
+
 Feel free to contribute to the project by opening issues or pull requests on the GitHub repository.
 
-License
+## License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Acknowledgments
+## Acknowledgments
+
 Thank you for using this Task Management Console App. If you have any questions or suggestions, please feel free to reach out. Enjoy managing your tasks efficiently!
