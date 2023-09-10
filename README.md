@@ -16,6 +16,10 @@ The Observer pattern is employed to notify observers (in this case, the `TaskCom
 
 The `TaskFactory` class uses the Factory pattern to create different types of tasks (work and personal) based on user input. This pattern encapsulates the task creation logic, making it easy to add new task types without modifying existing code.
 
+### 4. Command Pattern
+
+The `Command pattern` is used to encapsulate various user actions (e.g., adding a task, marking a task as completed) into separate command objects. This separation of concerns allows for a more modular and maintainable codebase. Each command class encapsulates the logic of a specific action, promoting code reusability and extensibility.
+
 ## Getting Started
 
 To run the application, follow these steps:
