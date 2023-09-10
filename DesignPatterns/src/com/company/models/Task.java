@@ -1,3 +1,4 @@
+// Task.java
 package com.company.models;
 
 import com.company.interfaces.Observer;
@@ -9,11 +10,16 @@ public class Task {
     private String title;
     private boolean completed;
     private List<Observer<Task>> observers = new ArrayList<>();
+    private String type;
 
-
-    public Task(String title) {
+    public Task(String title, String type) {
         this.title = title;
+        this.type = type;
         this.completed = false;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public String getTitle() {
@@ -24,7 +30,6 @@ public class Task {
         this.completed = completed;
         notifyObservers();
     }
-
 
     public boolean isCompleted() {
         return completed;
