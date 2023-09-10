@@ -6,11 +6,11 @@ This is a simple console application for managing tasks. It allows users to add 
 
 ### 1. Singleton Pattern
 
-The `TaskManager` class follows the Singleton pattern, ensuring that only one instance of the `TaskManager` is created throughout the application's lifecycle. This pattern provides a global point of access to the task management functionality.
+The `TaskManager` class follows the `Singleton` pattern, ensuring that only one instance of the `TaskManager` is created throughout the application's lifecycle. This pattern provides a global point of access to the task management functionality.
 
 ### 2. Observer Pattern
 
-The Observer pattern is employed to notify observers (in this case, the `TaskCompletionNotifier` class) when a task is marked as completed. This decouples the task and observer classes, allowing for easy extension with new observers in the future.
+The `Observer` pattern is employed to notify observers (in this case, the `TaskCompletionNotifier` class) when a task is marked as completed. This decouples the task and observer classes, allowing for easy extension with new observers in the future.
 
 ### 3. Factory Pattern
 
@@ -22,6 +22,9 @@ The `Command pattern` is used to encapsulate various user actions (e.g., adding 
 
 ### 5. Strategy Pattern
 The `Strategy pattern` is employed to implement different sorting strategies for tasks. You can choose between two sorting strategies: sorting tasks by title or sorting them by type. This pattern allows for easy addition of new sorting strategies in the future without modifying existing code.
+
+### 6. Decorator Pattern
+The `Decorator pattern` is used to enhance the behavior of tasks by dynamically attaching additional responsibilities to them. In this application, decorators are used to add properties such as priority and due dates to tasks without modifying their core implementation. This allows for flexible and reusable task customization.
 
 ## Getting Started
 
@@ -55,6 +58,11 @@ The application provides the following menu options:
 - **Delete Task**: Deletes a task from the list. You will be prompted to select a task by its number.
 
 - **Set Sorting Strategy**: Allows you to choose the sorting strategy for listing tasks. You can sort tasks by title or by type.
+
+- Decorators used in the application:
+- `PriorityTaskDecorator`: Adds a priority level to a task.
+- `DueDateTaskDecorator`: Adds a due date to a task.
+- You can chain multiple decorators to a task to combine their effects, allowing for rich and customized task descriptions.
 
 - **Exit**: Exits the application.
 
