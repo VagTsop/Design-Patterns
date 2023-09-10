@@ -20,6 +20,9 @@ The `TaskFactory` class uses the Factory pattern to create different types of ta
 
 The `Command pattern` is used to encapsulate various user actions (e.g., adding a task, marking a task as completed) into separate command objects. This separation of concerns allows for a more modular and maintainable codebase. Each command class encapsulates the logic of a specific action, promoting code reusability and extensibility.
 
+### 5. Strategy Pattern
+The `Strategy pattern` is employed to implement different sorting strategies for tasks. You can choose between two sorting strategies: sorting tasks by title or sorting them by type. This pattern allows for easy addition of new sorting strategies in the future without modifying existing code.
+
 ## Getting Started
 
 To run the application, follow these steps:
@@ -50,6 +53,8 @@ The application provides the following menu options:
 - **Mark Task as Completed**: Marks a task as completed. You will be prompted to select a task by its number.
 
 - **Delete Task**: Deletes a task from the list. You will be prompted to select a task by its number.
+
+- **Set Sorting Strategy**: Allows you to choose the sorting strategy for listing tasks. You can sort tasks by title or by type.
 
 - **Exit**: Exits the application.
 
