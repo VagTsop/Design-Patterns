@@ -5,11 +5,15 @@ import com.company.commands.AddTaskCommand;
 import com.company.commands.DeleteTaskCommand;
 import com.company.commands.ListTasksCommand;
 import com.company.commands.MarkTaskCompletedCommand;
+import com.company.decorators.DueDateTaskDecorator;
+import com.company.decorators.PriorityTaskDecorator;
+import com.company.enums.Priority;
 import com.company.interfaces.Command;
 import com.company.interfaces.TaskSortingStrategy;
 import com.company.strategies.SortByTitleStrategy;
 import com.company.strategies.SortByTypeStrategy;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -41,9 +45,14 @@ public class TaskManager {
 
         Task task = TaskFactory.createTask(taskType, title);
         TaskCompletionNotifier notifier = new TaskCompletionNotifier();
+
+
+        task = new DueDateTaskDecorator(task,LocalDate.now());
+        task = new PriorityTaskDecorator(task, Priority.HIGH);
+
         task.addObserver(notifier);
         tasks.add(task);
-
+        System.out.println(task.getDescription()); // This should include priority and due date
         System.out.println("Task added successfully!");
     }
 

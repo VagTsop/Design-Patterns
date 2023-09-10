@@ -48,7 +48,9 @@ public class Task {
             observer.update(this);
         }
     }
-
+    public String getDescription() {
+        return getTitle() + " [" + getType() + "]"; // Basic task description
+    }
     @Override
     public String toString() {
         return "[" + (completed ? "X" : " ") + "] " + title;
